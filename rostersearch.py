@@ -22,8 +22,7 @@ if(sys.argv[3].endswith(".csv") is False): #last command line argument should be
     exit()
 
 roster = open(sys.argv[3], 'r', encoding = 'utf-8') #open the csv file
-students = list(csv.reader(roster)) #students is a list of all students
-#search_pattern = sys.argv[2].lower() #ensures that our searches are case insensitive
+students = list(csv.reader(x.replace('\0', '') for x in roster)) #students is a list of all students
 
 #determines the function for appropriate column(s) to search based on command
 if sys.argv[1] == "-name": #command is “-name <pattern>”

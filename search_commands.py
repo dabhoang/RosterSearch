@@ -5,8 +5,8 @@ def search_name(pattern, students): #searches for pattern in all students' first
         student_firstname = student[0].lower() #gets the student's first name from csv file and ensures case insensitivity
         student_lastname = student[1].lower() #gets the student's last name from csv file and ensures case insensitivity
         if(student_firstname.find(pattern) != -1): #determines if the pattern exists in the first name and prints the student if so
-            print(student)
-        if(student_lastname.find(pattern) != -1): #determines if the pattern exists in the last name and prints the student if so
+            print(student)#"Name: " + student[0] + " " + student[1] + ", Email: " + student[2] + ", GPA: " + student[3])
+        elif(student_lastname.find(pattern) != -1): #determines if the pattern exists in the last name and prints the student if so
             print(student)
 
 def search_email(pattern, students): #searches for pattern in all students' emails without "@ucdavis.edu" suffix
