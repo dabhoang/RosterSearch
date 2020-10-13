@@ -14,13 +14,14 @@ def search_email(pattern, students): #searches for pattern in all students' emai
     pattern = pattern.lower() #ensures that our searches are case insensitive
     for student in students[1:]:
         emailbase = student[2].replace("@ucdavis.edu","").lower() #gets rid of "@ucdavis.edu" suffix and ensures case insensitivity
-        if(emailbase.find(search_pattern) != -1): #determines if the pattern exists in the email base and prints the student if so
+        if(emailbase.find(pattern) != -1): #determines if the pattern exists in the email base and prints the student if so
             print(student)
 
 def search_gpa(gpa, students): #searches for students with certain gpa's or gpa's in the specified range based on suffix
     if gpa[-1] == '+': #suffix is a '+', print all students with gpa's >= the entered gpa
         gpa = gpa.replace("+","") #gets rid of suffix
-        check_gpa_is_float(gpa)
+        if check_gpa_is_float(gpa) is False:
+            return
         print("Searching roster for students with a gpa of " + gpa + " and above:")
         for student in students[1:]:
             if student[3] >= gpa: #print all students with gpa's greater then or equal to the entered gpa
@@ -28,14 +29,16 @@ def search_gpa(gpa, students): #searches for students with certain gpa's or gpa'
 
     elif gpa[-1] == '-': #suffix is a '-', print all students with gpa's <= the entered gpa
         gpa = gpa.replace("-","") #gets rid of suffix
-        check_gpa_is_float(gpa)
+        if check_gpa_is_float(gpa) is False:
+            return
         print("Searching roster for students with a gpa of " + gpa + " and below:")
         for student in students[1:]: 
             if student[3] <= gpa: #print all students with gpa's less than or equal to the entered gpa
                 print(student)
 
     else: #no suffix
-        check_gpa_is_float(gpa)
+        if check_gpa_is_float(gpa) is False:
+            return
         print("Searching roster for students with a gpa of " + gpa + ":")
         for student in students[1:]: 
             if student[3] == gpa: #print all students with gpa's equal to the entered gpa
@@ -46,5 +49,4 @@ def check_gpa_is_float(gpa): #make sure that the gpa entered by the user without
         float(gpa)
     except:
         print("Please enter gpa in the form of a float followed by an optional suffix of \'+\' or \'-\'")
-        roster.close() #close the csv file
-        exit()
+        return False
