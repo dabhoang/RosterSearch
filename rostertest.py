@@ -2,15 +2,18 @@ from io import StringIO
 from unittest import TestCase 
 from unittest.mock import patch 
 import unittest
-#import rostersearch_test
 import sys
 import csv
 import search_commands
 
+
+
 class TestRoster(TestCase):
 
-    #test the search_name() function
+    #each test function consists of setting up what the correct printed output should be(expected), running the tested search command function and 
+    #gathering what's printed into stdout, and then asserting that the two should be equivalent
 
+    #test the search_name() function
     def test_search_name_empty_file(self): 
         expected = "Searching for all students with \"dab\" in their first name or last name:\n"
         with patch('sys.stdout', new = StringIO()) as actual_results:
