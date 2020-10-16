@@ -42,5 +42,20 @@ If I want to search for all students with a gpa less than or equal to 3.44, and 
 
 py rostersearch.py -gpa 3.44- mystudents.csv
 
+-----
+
+Description of each file:
+
+README.md - Gives instructions on how to run the script as well as a description about the role of each file in the project.
+
+example_roster.csv - An example of a csv file to show how to format the students. Notice how the first row is for column titles and the 4 columns are First Name, Last Name, Email, and GPA of students respectively. 
+
+rostersearch.py - This is the file that starts running when the the script is executed.
+
+rostertest.py - This filecontains the unit tests that I wrote to test the functions of search_commands.py. They were written using the unittest framework. 
+To run the unit tests, type into the terminal: py rostertest.py
+
+search_commands.py - This file contains the functions that perform the searches as well as the function that determines whether the user-entered GPA without the suffix is indeed a float.
+
 
 
