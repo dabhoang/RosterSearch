@@ -1,9 +1,12 @@
-To execute this python script, make sure that the csv file containing the roster for which the search is to be performed is in the same directory as the rostersearch.py file. When entering student information into your csv file, please do not include any students in the first line. The script is designed to begin searching the second line so that the first line can list the column titles/headers. And please ensure that the first column is for first names, the second column is for last names, the third column is for emails, and the fourth column is for gpa's.
+To execute this python script, clone the RosterSearch repository from dabhoang's github. Move the csv file containing the roster for which the search is to be performed into the RosterSearch directory.
 
+When entering student information into your csv file, please do not include any students in the first line. The script is designed to begin searching the second line so that the first line can list the column titles/headers. And please ensure that the first column is for first names, the second column is for last names, the third column is for emails, and the fourth column is for gpa's.
 
-Run the following command on the terminal:
+Run the cd command on the terminal into the RosterSearch directory and then run the following command with replacements for arg1, arg2, and arg3 once inside RosterSearch:
 
-py rostersearch.py arg1 arg2 arg3 where arg1, arg2, and arg3 are replaced with the following:
+py rostersearch.py arg1 arg2 arg3 
+
+arg1, arg2, and arg3 are replaced with the following:
 
 arg1 is one of: -name -email or -gpa 
 Use -name to search for all students with a certain pattern in their first or last names in the roster, case insensitive
@@ -39,7 +42,5 @@ If I want to search for all students with a gpa less than or equal to 3.44, and 
 
 py rostersearch.py -gpa 3.44- mystudents.csv
 
------
 
-When entering student information into your csv file, please do not include any students in the first line. The script is designed to begin searching the second line so that the first line can list the column titles/headers. And please ensure that the first column is for first names, the second column is forlast names, the third column is for emails, and the fourth column is for gpa's.
 
