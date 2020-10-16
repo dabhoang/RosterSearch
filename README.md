@@ -1,6 +1,6 @@
 To execute this python script, clone the RosterSearch repository from dabhoang's github. Move the csv file containing the roster for which the search is to be performed into the RosterSearch directory.
 
-When entering student information into your csv file, please do not include any students in the first line. The script is designed to begin searching the second line so that the first line can list the column titles/headers. And please ensure that the first column is for first names, the second column is for last names, the third column is for emails, and the fourth column is for gpa's.
+When entering student information into your csv file, please do not include any students in the first line. The script is designed to begin searching the second line so that the first line can list the column titles/headers. And please ensure that the first column is for first names, the second column is for last names, the third column is for emails, and the fourth column is for gpa's. An example roster is provided in the repository.
 
 Run the cd command on the terminal into the RosterSearch directory and then run the following command with replacements for arg1, arg2, and arg3 once inside RosterSearch:
 
